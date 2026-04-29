@@ -48,7 +48,7 @@
 
   /* NAV */
   nav {
-    position: fixed; top: 0; width: 100%; z-index: 100;
+    position: sticky; top: 0; width: 100%; z-index: 100;
     background: rgba(10,15,30,0.85);
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
@@ -277,7 +277,7 @@
   .skill-tag:hover { background: rgba(0,212,255,0.15); }
 
   /* TIMELINE */
-  .timeline { position: relative; }
+  .timeline { position: relative; margin-top: 0; }
 
   .timeline::before {
     content: '';
@@ -292,6 +292,11 @@
     padding-left: 52px;
     margin-bottom: 36px;
   }
+  
+  /* EXPERIENCE SECTION ALIGNMENT */
+  #experience .row { align-items: flex-start; }
+  #experience .col-lg-4 { display: flex; flex-direction: column; justify-content: flex-start; }
+  #experience .col-lg-8 { display: flex; align-items: flex-start; }
 
   .timeline-dot {
     position: absolute;
