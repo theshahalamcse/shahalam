@@ -108,7 +108,7 @@
   .hero-title {
     font-family: 'Syne', sans-serif;
     font-size: clamp(3rem, 7vw, 6rem);
-    font-weight: 800;
+    font-weight: 600;
     line-height: 1.05;
     margin-bottom: 24px;
   }
@@ -201,7 +201,7 @@
   .stat-item { text-align: left; }
   .stat-num {
     font-family: 'Syne', sans-serif;
-    font-size: 2rem; font-weight: 800;
+    font-size: 2rem; font-weight: 500;
     color: var(--accent);
     line-height: 1;
   }
@@ -220,7 +220,7 @@
   .section-title {
     font-family: 'Syne', sans-serif;
     font-size: clamp(2rem, 4vw, 3rem);
-    font-weight: 800;
+    font-weight: 500;
     line-height: 1.1;
     margin-bottom: 16px;
   }
@@ -319,6 +319,23 @@
     margin-bottom: 20px;
   }
 
+  /* EXPERIENCE IMAGE */
+  .experience-image {
+    width: 100%;
+    max-width: 300px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto;
+  }
+
+  .experience-image img {
+    width: 100%;
+    height: auto;
+    max-width: 100%;
+    object-fit: contain;
+  }
+
   .timeline-dot {
     position: absolute;
     left: 7px; top: 6px;
@@ -399,6 +416,7 @@
   /* RESPONSIVE DESIGN */
   @media (max-width: 1200px) {
     .hero-photo-inner { width: 280px; height: 280px; }
+    .experience-image { max-width: 280px; }
   }
 
   @media (max-width: 1024px) {
@@ -406,6 +424,7 @@
     .hero-sub { font-size: 1rem; }
     .section-title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
     .skill-tag { font-size: 0.75rem; padding: 4px 10px; }
+    .experience-image { max-width: 260px; }
   }
 
   @media (max-width: 768px) {
@@ -454,6 +473,8 @@
     #experience .col-lg-4 { margin-bottom: 30px; }
     #experience .col-lg-8 { width: 100%; }
     
+    .experience-image { max-width: 250px; height: 1000px; }
+    
     .contact-card { padding: 28px; }
     .contact-link { font-size: 0.9rem; padding: 10px 0; }
     
@@ -492,6 +513,8 @@
     
     .col-6 { padding: 0.25rem; }
     
+    .experience-image { max-width: 200px; }
+    
     .timeline::before { left: 10px; }
     .timeline-item { padding-left: 35px; margin-bottom: 24px; }
     .timeline-dot { left: 1px; top: 3px; width: 14px; height: 14px; }
@@ -519,6 +542,8 @@
     
     .timeline-item { padding-left: 30px; }
     .timeline-dot { width: 12px; height: 12px; }
+    
+    .experience-image { max-width: 150px; }
   }
 </style>
 </head>
@@ -699,9 +724,7 @@
         </p>
       </div>
       <div class="col-lg-4 fade-up">
-        <div class="experience-image">
-          <img src="assets/networking.svg" alt="Networking Illustration">
-        </div>
+        
       </div>
       <div class="col-lg-4 fade-up">
         <div class="timeline">
