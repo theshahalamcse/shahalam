@@ -27,6 +27,7 @@
     color: var(--text);
     font-family: 'Space Grotesk', sans-serif;
     overflow-x: hidden;
+    padding-top: 70px;
   }
 
   /* ANIMATED BACKGROUND */
@@ -48,11 +49,16 @@
 
   /* NAV */
   nav {
-    position: sticky; top: 0; width: 100%; z-index: 100;
-    background: rgba(10,15,30,0.85);
+    position: fixed !important; top: 0 !important; left: 0 !important; right: 0 !important; width: 100% !important; z-index: 1000 !important;
+    background: rgba(10,15,30,0.95) !important;
     backdrop-filter: blur(20px);
     border-bottom: 1px solid var(--border);
-    padding: 16px 0;
+    padding: 16px 0 !important;
+    margin: 0 !important;
+  }
+  
+  nav .container {
+    max-width: 100%;
   }
 
   .nav-brand {
@@ -81,7 +87,7 @@
   .hero {
     min-height: 100vh;
     display: flex; align-items: center;
-    padding: 120px 0 80px;
+    padding: 80px 0 80px;
     position: relative; z-index: 1;
   }
 
@@ -295,8 +301,23 @@
   
   /* EXPERIENCE SECTION ALIGNMENT */
   #experience .row { align-items: flex-start; }
-  #experience .col-lg-4 { display: flex; flex-direction: column; justify-content: flex-start; }
-  #experience .col-lg-8 { display: flex; align-items: flex-start; }
+  #experience .col-lg-4 { 
+    display: flex; 
+    flex-direction: column; 
+    justify-content: flex-start;
+    margin-bottom: 0;
+  }
+  #experience .col-lg-8 { 
+    display: flex; 
+    align-items: flex-start;
+    flex-direction: column;
+  }
+  
+  #experience .section-tag,
+  #experience .section-title,
+  #experience .section-desc {
+    margin-bottom: 20px;
+  }
 
   .timeline-dot {
     position: absolute;
@@ -375,10 +396,129 @@
   ::-webkit-scrollbar-track { background: var(--primary); }
   ::-webkit-scrollbar-thumb { background: var(--accent2); border-radius: 3px; }
 
+  /* RESPONSIVE DESIGN */
+  @media (max-width: 1200px) {
+    .hero-photo-inner { width: 280px; height: 280px; }
+  }
+
+  @media (max-width: 1024px) {
+    .hero-title { font-size: clamp(2.2rem, 5vw, 4rem); }
+    .hero-sub { font-size: 1rem; }
+    .section-title { font-size: clamp(1.8rem, 3.5vw, 2.5rem); }
+    .skill-tag { font-size: 0.75rem; padding: 4px 10px; }
+  }
+
   @media (max-width: 768px) {
+    body { padding-top: 65px; }
+    
+    nav { padding: 12px 0 !important; }
+    .nav-brand { font-size: 1.2rem; }
+    .nav-link { font-size: 0.8rem; padding: 4px 8px !important; }
+    
+    .hero { padding: 60px 0 40px; min-height: auto; }
+    .hero-title { font-size: clamp(2rem, 5vw, 3.2rem); }
+    .hero-sub { font-size: 0.95rem; max-width: 100%; }
     .hero-photo-inner { width: 220px; height: 220px; }
-    .stats-row { gap: 24px; }
+    .hero-photo-ring { inset: -8px; }
+    
+    .stats-row { gap: 20px; flex-direction: column; }
+    .stat-num { font-size: 1.5rem; }
+    .stat-label { font-size: 0.7rem; }
+    
+    .btn-primary-custom, .btn-outline-custom { 
+      padding: 12px 24px; 
+      font-size: 0.9rem;
+      display: block;
+      text-align: center;
+      margin-bottom: 10px;
+    }
+    
+    section { padding: 60px 0; }
+    
+    .section-title { font-size: clamp(1.5rem, 4vw, 2.2rem); }
+    .section-desc { font-size: 0.95rem; }
+    
+    .glass-card { padding: 20px; }
+    .skill-category { padding: 20px; }
+    .skill-cat-title { font-size: 0.75rem; margin-bottom: 12px; }
+    .skill-tag { font-size: 0.7rem; padding: 3px 8px; margin: 3px; }
+    
+    .timeline::before { left: 12px; }
+    .timeline-item { padding-left: 40px; margin-bottom: 28px; }
+    .timeline-dot { left: 3px; top: 4px; width: 16px; height: 16px; }
+    .timeline-year { font-size: 0.7rem; }
+    .timeline-role { font-size: 1rem; }
+    .timeline-company { font-size: 0.85rem; }
+    
+    #experience .row { flex-direction: column; }
+    #experience .col-lg-4 { margin-bottom: 30px; }
+    #experience .col-lg-8 { width: 100%; }
+    
     .contact-card { padding: 28px; }
+    .contact-link { font-size: 0.9rem; padding: 10px 0; }
+    
+    footer { padding: 24px 0; font-size: 0.8rem; }
+  }
+
+  @media (max-width: 576px) {
+    body { padding-top: 60px; }
+    
+    .nav-brand { font-size: 1.1rem; }
+    .nav-link { font-size: 0.75rem; padding: 3px 6px !important; }
+    
+    .hero { padding: 40px 0 30px; }
+    .hero-title { font-size: clamp(1.5rem, 4vw, 2.5rem); }
+    .hero-sub { font-size: 0.9rem; }
+    .hero-photo-inner { width: 180px; height: 180px; }
+    .hero-photo-ring { inset: -6px; }
+    
+    .stats-row { gap: 15px; }
+    .stat-num { font-size: 1.3rem; }
+    .stat-label { font-size: 0.65rem; }
+    
+    .btn-primary-custom, .btn-outline-custom { 
+      padding: 10px 20px; 
+      font-size: 0.85rem;
+      width: 100%;
+    }
+    
+    section { padding: 40px 0; }
+    .section-title { font-size: clamp(1.3rem, 3vw, 2rem); }
+    .section-desc { font-size: 0.9rem; }
+    
+    .glass-card { padding: 16px; }
+    .skill-category { padding: 16px; }
+    .skill-tag { font-size: 0.65rem; padding: 2px 6px; margin: 2px; }
+    
+    .col-6 { padding: 0.25rem; }
+    
+    .timeline::before { left: 10px; }
+    .timeline-item { padding-left: 35px; margin-bottom: 24px; }
+    .timeline-dot { left: 1px; top: 3px; width: 14px; height: 14px; }
+    .timeline-year { font-size: 0.65rem; }
+    .timeline-role { font-size: 0.95rem; }
+    .timeline-company { font-size: 0.8rem; }
+    
+    .contact-card { padding: 20px; }
+    .contact-link { font-size: 0.85rem; padding: 8px 0; gap: 8px; }
+    .contact-link i { width: 16px; font-size: 0.9rem; }
+    
+    footer { padding: 16px 0; font-size: 0.75rem; }
+    
+    .hero-tag { font-size: 0.7rem; padding: 5px 12px; margin-bottom: 16px; }
+  }
+
+  @media (max-width: 400px) {
+    .nav-brand { font-size: 1rem; }
+    .hero-title { font-size: clamp(1.3rem, 3vw, 2.2rem); }
+    .hero-sub { font-size: 0.85rem; }
+    .hero-photo-inner { width: 150px; height: 150px; }
+    
+    .stats-row { flex-wrap: wrap; }
+    .stat-num { font-size: 1.2rem; }
+    
+    .timeline-item { padding-left: 30px; }
+    .timeline-dot { width: 12px; height: 12px; }
   }
 </style>
 </head>
@@ -549,7 +689,7 @@
 
 <!-- EXPERIENCE -->
 <section id="experience" style="background: rgba(255,255,255,0.01);">
-  <div class="container">
+  <div class="container align-content-center">
     <div class="row g-5 align-items-start">
       <div class="col-lg-4 fade-up">
         <div class="section-tag">Work History</div>
@@ -558,7 +698,12 @@
           Building and maintaining enterprise network infrastructure across multiple ISPs in Bangladesh.
         </p>
       </div>
-      <div class="col-lg-8 fade-up">
+      <div class="col-lg-4 fade-up">
+        <div class="experience-image">
+          <img src="assets/networking.svg" alt="Networking Illustration">
+        </div>
+      </div>
+      <div class="col-lg-4 fade-up">
         <div class="timeline">
           <div class="timeline-item">
             <div class="timeline-dot"></div>
